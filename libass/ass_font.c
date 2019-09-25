@@ -20,12 +20,7 @@
 #include "ass_compat.h"
 
 #include <inttypes.h>
-#include <ft2build.h>
-#include FT_FREETYPE_H
-#include FT_SYNTHESIS_H
-#include FT_GLYPH_H
-#include FT_TRUETYPE_TABLES_H
-#include FT_OUTLINE_H
+#include <CoreText/CoreText.h>
 #include <limits.h>
 
 #include "ass.h"

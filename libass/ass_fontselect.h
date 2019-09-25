@@ -21,8 +21,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <ft2build.h>
-#include FT_FREETYPE_H
+#include <CoreText/CoreText.h>
 
 typedef struct ass_shaper_font_data ASS_ShaperFontData;
 typedef struct font_selector ASS_FontSelector;
@@ -45,7 +44,7 @@ typedef struct ass_font_provider_meta_data ASS_FontProviderMetaData;
  * font path (i.e. the path was set to NULL).
  *
  * \param font_priv font private data
- * \param output buffer; set to NULL to query stream size
+ * \param data output buffer; set to NULL to query stream size
  * \param offset stream offset
  * \param len bytes to read into output buffer from stream
  * \return actual number of bytes read, or stream size if data == NULL
@@ -65,7 +64,7 @@ typedef bool    (*CheckPostscriptFunc)(void *font_priv);
  * Check if a glyph is supported by a font.
  *
  * \param font_priv font private data
- * \param codepont Unicode codepoint (UTF-32)
+ * \param codepoint Unicode codepoint (UTF-32)
  * \return true if codepoint is supported by the font
  */
 typedef bool    (*CheckGlyphFunc)(void *font_priv, uint32_t codepoint);
@@ -225,8 +224,7 @@ void ass_map_font(const ASS_FontMapping *map, int len, const char *name,
                   ASS_FontProviderMetaData *meta);
 
 ASS_FontSelector *
-ass_fontselect_init(ASS_Library *library,
-                    FT_Library ftlibrary, const char *family,
+ass_fontselect_init(ASS_Library *library, const char *family,
                     const char *path, const char *config,
                     ASS_DefaultFontProvider dfp);
 char *ass_font_select(ASS_FontSelector *priv, ASS_Library *library,
@@ -243,7 +241,7 @@ ASS_FontProvider *ass_font_provider_new(ASS_FontSelector *selector,
  * provide additional fonts to libass.
  * \param priv parent renderer
  * \param funcs callback functions
- * \param private data for provider callbacks
+ * \param data private data for provider callbacks
  *
  */
 ASS_FontProvider *

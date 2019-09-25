@@ -184,7 +184,7 @@ typedef struct ass_track {
     char *style_format;     // style format line (everything after "Format: ")
     char *event_format;     // event format line
 
-    enum {
+    enum ass_track_type {
         TRACK_TYPE_UNKNOWN = 0,
         TRACK_TYPE_ASS,
         TRACK_TYPE_SSA

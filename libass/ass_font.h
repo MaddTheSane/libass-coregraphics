@@ -20,9 +20,9 @@
 #define LIBASS_FONT_H
 
 #include <stdint.h>
-#include <ft2build.h>
-#include FT_GLYPH_H
-#include FT_OUTLINE_H
+#include <CoreText/CoreText.h>
+//#include FT_GLYPH_H
+//#include FT_OUTLINE_H
 
 typedef struct ass_font ASS_Font;
 typedef struct ass_font_desc ASS_FontDesc;
@@ -49,7 +49,6 @@ struct ass_font_desc {
 struct ass_font {
     ASS_FontDesc desc;
     ASS_Library *library;
-    FT_Library ftlibrary;
     int faces_uid[ASS_FONT_MAX_FACES];
     FT_Face faces[ASS_FONT_MAX_FACES];
     ASS_ShaperFontData *shaper_priv;

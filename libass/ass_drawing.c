@@ -19,8 +19,8 @@
 #include "config.h"
 #include "ass_compat.h"
 
-#include <ft2build.h>
-#include FT_OUTLINE_H
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreText/CoreText.h>
 #include <math.h>
 #include <stdbool.h>
 #include <limits.h>

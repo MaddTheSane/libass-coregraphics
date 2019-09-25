@@ -21,13 +21,8 @@
 #define LIBASS_RENDER_H
 
 #include <inttypes.h>
-#include <ft2build.h>
-#include FT_FREETYPE_H
-#include FT_GLYPH_H
-#include FT_SYNTHESIS_H
-#ifdef CONFIG_HARFBUZZ
-#include <hb.h>
-#endif
+#include <CoreText/CoreText.h>
+#include <CoreGraphics/CoreGraphics.h>
 
 #include "ass.h"
 #include "ass_font.h"

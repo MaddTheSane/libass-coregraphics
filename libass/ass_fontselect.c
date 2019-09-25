@@ -29,13 +29,9 @@
 #include <sys/stat.h>
 #include <inttypes.h>
 #include <limits.h>
-#include <ft2build.h>
+#include <CoreText/CoreText.h>
 #include <sys/types.h>
 #include <dirent.h>
-#include FT_FREETYPE_H
-#include FT_SFNT_NAMES_H
-#include FT_TRUETYPE_IDS_H
-#include FT_TYPE1_TABLES_H
 
 #include "ass_utils.h"
 #include "ass.h"
